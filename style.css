@@ -1,0 +1,747 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+    overflow: hidden;
+      /* background-image: url('https://images.unsplash.com/photo-1519681393784-d120267933ba?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1124&q=100');
+      background-position: center; */
+}
+
+
+/* Style for the nav bar */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 50px 0 50px;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+  background: rgba( 255, 255, 255, 0.25 );
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  backdrop-filter: blur( 19.5px );
+  -webkit-backdrop-filter: blur( 19.5px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+.file {
+  color: rgb(202, 5, 120);
+  font-size: 40px;
+  font-weight: bolder;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links .logo {
+  margin-right: auto;
+}
+
+.nav-links .logo img {
+  height: 50px; /* Adjust size of the image */
+  width: auto;
+  margin-left: 20px;
+}
+
+.nav-links .menu-item {
+  margin-left: auto;
+}
+
+.nav-links .menu-item a {
+  text-decoration: none;
+  color: #000;
+  font-size: 25px;
+  margin-right: 20px;
+}
+
+/* Main Content Styling */
+.container {
+  /* display: flex; */
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.content{
+    font-size: 30px;
+    /* display: flex; */
+
+ }
+.right {
+  display: none; /* Initially hidden */
+}
+
+.show-participant-info .right {
+  display: block;
+}
+
+.show-participant-info .left {
+  display: none;
+}
+.intro {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 40px;
+    border-radius: 15px;
+    margin-top: 20px;
+    /* background: #000; */
+}
+
+.intro img {
+    min-width: 50%;
+    min-height: 100px;
+}
+
+.intro .para {
+    
+    min-width: 50%;
+    min-height: 100px;
+    margin-left: 20px;
+}
+
+.navigation-buttons {
+    margin-top: 20px;
+    margin-left: 35%;
+}
+
+#start-btn{
+  margin-top: 40px;
+}
+.btns {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+
+}
+
+.btns:hover {
+  background-color: #0056b3;
+}
+#next-btn{
+  /* background-color: #000; */
+  margin-left: 15px;
+}
+
+/* .btns {
+  padding: 10px 20px;
+} */
+#prev-goal-btn{
+  padding: 10px 20px;
+  /* margin-right: 20px; */
+}
+#submit-btn{
+  padding: 10px 10px;
+  margin-right: 20px;
+}
+
+
+
+.right {
+    padding: 20px;
+     backdrop-filter: blur(0px) saturate(200%);
+    -webkit-backdrop-filter: blur(0px) saturate(200%);
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 12px;
+    border: 1px solid rgba(209, 213, 219, 0.3);
+    margin-left: 200px;
+    margin-right: 200px;
+    overflow-y: scroll;
+    max-height: 460px;
+}
+
+h2 {
+    color: #333;
+    /* margin-bottom: 10px; */
+    font-size: 25px;
+    /* margin-left: 40%; */
+}
+
+label {
+    display: block;
+    margin: 16px 0 10px;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 5px;
+}
+
+input[type="text"],
+select {
+    width: 50%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 15px;
+}
+
+input[type="radio"] {
+    display: none; /* Hide the default radio button */
+}
+
+.custom-radio {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #007bff;
+    border-radius: 50%;
+    margin-right: 5px;
+    position: relative;
+    top: 5px;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+input[type="radio"]:checked + .custom-radio {
+    background-color: #007bff; /* Change background when checked */
+    border-color: #007bff; /* Match border color */
+}
+
+input[type="radio"]:checked + .custom-radio::after {
+    content: '✔'; /* Unicode for tick */
+    color: white; /* Tick color */
+    font-size: 16px; /* Adjust size as needed */
+    position: absolute;
+    left: 2px; /* Adjust position */
+}
+
+
+.option {
+    background-color: #eef;
+    padding: 15px;
+    border: 1px solid #007bff;
+    border-radius: 4px;
+    margin-top: 10px;
+    width: 50%;
+}
+
+
+/* question1 */
+.linear-scale-container {
+  position: relative;
+ width: 306px;
+  margin: 20px 0;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  width: 102%;
+  height: 8px;
+  background: #ddd; /* Track color */
+  border-radius: 5px;
+  outline: none;
+  opacity: 0.7;
+  transition: opacity .2s;
+}
+
+input[type="range"]:hover {
+  opacity: 1; /* Full opacity on hover */
+}
+
+.scale-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+
+}
+
+
+
+/* Tick mark lines below the slider */
+.scale-lines {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  position: relative;
+}
+
+/* Style for each number and its vertical line */
+.scale-lines span {
+  position: relative;
+  font-size: 14px;
+  color: #333;
+  left: auto;
+}
+
+/* Vertical line under each number */
+.scale-lines span::before {
+  content: '';
+  position: absolute;
+  top: -14px;
+  left: 80%;
+  width: 2px;
+  height: 10px;
+  background-color: #000;
+  transform: translateX(-50%);
+}
+
+/* Output area for value and meaning */
+#familiarity-output {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #555;
+}
+
+
+
+
+
+
+.footer{
+  /* background: #000; */
+  padding: 20px;
+  backdrop-filter: blur(3px) saturate(200%);
+  -webkit-backdrop-filter: blur(3px) saturate(200%);
+  background-color: rgba(255, 255, 255, 0.24);
+  border-radius: 12px;
+  border: 1px solid rgba(209, 213, 219, 0.3);
+    border-radius: 8px;
+    margin-left: 200px;
+    margin-right: 200px;
+    overflow-y: scroll;
+    max-height: 460px;
+}
+
+
+/* question3 */
+#goal-review {
+  display: flex;
+  flex-direction: column;
+}
+
+#goal-review label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 5px; /* Space between labels */
+  font-size: 18px; /* Font size */
+}
+
+#goal-review input[type="checkbox"] {
+  appearance: none; /* Remove default checkbox appearance */
+  -webkit-appearance: none; /* Remove default checkbox appearance for Safari */
+  width: 20px; /* Width of the custom checkbox */
+  height: 20px; /* Height of the custom checkbox */
+  border: 2px solid #007BFF; /* Border color */
+  border-radius: 4px; /* Rounded corners */
+  outline: none; /* Remove outline */
+  margin-right: 10px; /* Space between checkbox and label text */
+  transition: background-color 0.3s, border-color 0.3s; /* Transition for hover effects */
+}
+
+#goal-review input[type="checkbox"]:checked {
+  background-color: #007BFF; /* Background color when checked */
+  border-color: #0056b3; /* Darker border color when checked */
+  position: relative; /* Position relative to show the tick */
+}
+
+#goal-review input[type="checkbox"]:checked::after {
+  content: '✓'; /* Tick icon */
+  color: white; /* Color of the tick */
+  font-size: 20px; /* Size of the tick */
+  position: absolute; /* Absolute positioning for the tick */
+  left: 0px; /* Position the tick inside the checkbox */
+  top: -4px; /* Adjust the vertical position */
+}
+
+
+/* Slider container */
+.slider-container {
+  margin: 20px 0;
+  position: relative;
+  width: 90%;
+}
+.slider-container input[type="range"]{
+  width: 93%;
+}
+
+/* Custom slider styling */
+.custom-slider {
+  width: 90%;
+  height: 10px;
+  appearance: none;
+  background-color: #ddd;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+}
+
+.custom-slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #007bff;
+  border: 2px solid #ffffff;
+}
+
+.custom-slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #007bff;
+  border: 2px solid #ffffff;
+}
+
+/* Custom scale lines */
+.custom-scale-lines {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  top: -5px;
+  left: 1%;
+  width: 90%;
+  margin: 10px 0;
+}
+
+.custom-scale-lines span {
+  display: block;
+  width: 2px;
+  height: 20px;
+  background-color: #000;
+}
+
+/* Selected value display */
+.slider-value-display {
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Slider meaning display */
+.slider-meaning {
+  margin-top: 5px;
+  font-size: 14px;
+  color: #666;
+}
+
+
+
+/* question5 */
+ /* Style for the textarea */
+ textarea {
+  width: 100%; /* Full width to fill the container */
+  max-width: 600px; /* Max width to prevent it from becoming too wide */
+  padding: 10px; /* Padding for better text input space */
+  border-bottom: 1px solid #000000; /* Light gray border */
+  border: none;
+  outline: none;
+  border-radius: 4px; /* Rounded corners */
+  font-size: 15px; /* Font size for text */
+  resize: none; /* Allow resizing only vertically */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+  transition: border-color 0.3s; /* Smooth transition for border color */
+}
+
+/* Change border color on focus */
+textarea:focus {
+  border-color: #007bff; /* Change border color on focus */
+  outline: none; /* Remove default outline */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Shadow effect on focus */
+}
+
+/* Optional: Style for placeholder text */
+textarea::placeholder {
+  color: #352e2e; /* Gray color for placeholder text */
+  font-style: italic; /* Italic style for placeholder */
+}
+
+
+
+.intro {
+  z-index: 1; /* Lower priority */
+}
+
+.toast {
+  z-index: 9999; /* Ensure it's on top */
+}
+
+
+
+@media screen and (max-width: 480px) {
+  nav {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 20px 0 20px;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 8px;
+  
+    
+  }
+  .file {
+    font-size: 20px;
+  }
+  
+
+  
+  
+  
+  .nav-links .logo img {
+    height: 30px; /* Adjust size of the image */
+    margin-left: 0px;
+  }
+  
+  
+  
+  .nav-links .menu-item a {
+    text-decoration: none;
+    color: #000;
+    font-size: 18px;
+    margin-right: 10px;
+  }
+  .container {
+    padding: 10px;
+  }
+  
+  .content{
+      font-size: 24px;
+  
+   }
+ 
+ 
+  .intro {
+      padding: 40px;
+      border-radius: 8px;
+      margin-top: 10px;
+  }
+  
+  .intro  img {
+      display: none;
+  }
+  
+  .intro .para {
+      
+      width: 100%;
+      min-height: 100px;
+      margin-left: 10px;
+  }
+
+  .navigation-buttons {
+    margin-top: 35px;
+    margin-left: 30%;
+}
+#next-btn{
+  /* background-color: #000; */
+  margin-left: 30px;
+}
+
+/* .btns {
+  padding: 10px 20px;
+} */
+#prev-goal-btn{
+  padding: 10px 20px;
+  /* margin-right: 20px; */
+}
+#submit-btn{
+  padding: 10px 10px;
+  margin-right: 20px;
+}
+
+
+.right {
+  padding: 10px;
+  border-radius: 10px;
+  margin-right: 12px;
+  margin-left: 12px;
+  max-height: 600px;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+label {
+  margin: 5px 0 3px;
+  font-size: 12px;
+  padding: 5px;
+}
+
+input[type="text"],
+select {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+
+
+.custom-radio {
+  margin-right: 5px;
+  top: 2;
+}
+
+
+
+input[type="radio"]:checked + .custom-radio::after {
+
+  font-size: 12px; /* Adjust size as needed */
+  left: 3px; /* Adjust position */
+  top: 2px;
+}
+
+
+.option {
+  background-color: #eef;
+  padding: 10px;
+  border: 1px solid #007bff;
+  border-radius: 4px;
+  margin-top: 5px;
+  width: 100%;
+}
+
+
+/* question1 */
+.linear-scale-container {
+  position: relative;
+  margin: 10px 0;
+  width: 208px;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  width: 102%;
+}
+/* Style for each number and its vertical line */
+.scale-lines span {
+  font-size: 10px;
+}
+
+
+
+/* Output area for value and meaning */
+#familiarity-output {
+  font-size: 10px;
+}
+
+
+
+
+.scale-labels {
+  justify-content: space-between;
+  margin-top: 5px;
+
+}
+
+
+
+
+
+/* Style for each number and its vertical line */
+.scale-lines span {
+  font-size: 10px;
+}
+
+/* Vertical line under each number */
+.scale-lines span::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 80%;
+  width: 2px;
+  height: 10px;
+  background-color: #000;
+  transform: translateX(-50%);
+}
+
+/* Output area for value and meaning */
+#familiarity-output {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #555;
+}
+
+
+.footer{
+padding: 10px;
+  margin-left: 12px;
+  margin-right: 12px;
+  max-height: 600px;
+}
+
+
+#goal-review label {
+font-size: 12px; /* Font size */
+}
+
+#goal-review input[type="checkbox"] {
+width: 15px; /* Width of the custom checkbox */
+height: 15px; /* Height of the custom checkbox */
+border: 2px solid #007BFF; /* Border color */
+margin-right: 10px; /* Space between checkbox and label text */
+}
+
+
+
+#goal-review input[type="checkbox"]:checked::after {
+content: '✓'; /* Tick icon */
+color: white; /* Color of the tick */
+font-size: 14px; /* Size of the tick */
+position: absolute; /* Absolute positioning for the tick */
+left: 0px; /* Position the tick inside the checkbox */
+top: -2px; /* Adjust the vertical position */
+}
+
+.slider-container input[type="range"]{
+  width: 98%;
+}
+
+/* Custom scale lines */
+.custom-scale-lines {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  top: -5px;
+  left: 3%;
+  width: 90%;
+  margin: 10px 0;
+}
+
+.custom-scale-lines span {
+  height: 10px;
+}
+
+/* Selected value display */
+.slider-value-display {
+  font-size: 12px;
+}
+
+/* Slider meaning display */
+.slider-meaning {
+  font-size: 12px;
+}
+
+
+
+/* question5 */
+/* Style for the textarea */
+textarea {
+width: 100%; /* Full width to fill the container */
+padding: 10px; /* Padding for better text input space */
+font-size: 12px; /* Font size for text */
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
