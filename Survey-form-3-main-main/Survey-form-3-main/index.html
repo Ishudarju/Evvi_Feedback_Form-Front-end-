@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="EVVI_Icon.png" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
+    <title>PTA-Form</title>
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav>
+      <ul class="nav-links">
+        <li class="logo">
+          <img src="Evvi_new.png" alt="Logo" />
+        </li>
+        <li class="name">
+          <h1 class="file">Feedback-Form</h1>
+        </li>
+        <li class="menu-item">
+          <a href="#"><i class="fa-solid fa-house-chimney"></i></a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="container">
+      <div class="intro left section" id="intro-section">
+        <img src="istockphoto.jpg" alt="Goal Setting Image" />
+        <div class="para">
+          <p class="content">
+            Thank you for participating in the Goal Setting Program! We’d
+            appreciate your feedback to understand the impact of the training
+            and identify areas for improvement. Please take a few minutes to
+            complete this assessment.
+          </p>
+          <div class="navigation-buttons">
+            <button class="btns" id="start-btn">START</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="header-content section" id="header-section" style="display: none;">
+        <h2>Knowledge and Application Post-Training</h2>
+        <div class="slide1">
+          <!-- 1 question -->
+          <label>1. How confident do you feel about setting and achieving goals after this training?
+          </label>
+          <div class="linear-scale-container">
+            <!-- Slider -->
+            <input
+              type="range"
+              id="goal-familiarity"
+              name="achieving-goal"
+              min="1"
+              max="5"
+              step="1"
+              value="1"
+              oninput="updateAchievingGoalValue(this.value)"
+            />
+  
+            <!-- Numbered labels below the slider with lines -->
+            <div class="scale-lines">
+              <span>1</span>
+              <span>2</span>
+              <span>3</span>
+              <span>4</span>
+              <span>5</span>
+            </div>
+  
+            <!-- Initially hidden output area for value and meaning -->
+            <div id="achieving-output" style="display: none">
+              Your rating: <span id="achieving-value">1</span> -
+              <span id="achieving-meaning" >Not Familiar</span>
+            </div>
+          </div>
+        </div>
+        <div class="slide1">
+          <!-- 2nd question -->
+          <label>2. What’s the most valuable insight or strategy you learned about goal setting? </label>
+          <textarea id="learned" name="learned" rows="4"></textarea>
+        </div>
+
+        <div class="navigation-buttons">
+          <button class="btns" id="prev-header">PREV</button>
+          <button class="btns" id="next-header">NEXT</button>
+        </div>
+      </header>
+    </div>
+    <main class="main-content section" id="main-section" style="display: none;">
+      <h2>Feedback on the Training</h2>
+      <!-- question 3-->
+      <label>1. Was the session lively and engaging to you?</label>
+      <div class="emoji-container">
+        <div class="emoji-item">
+          <span
+            class="slider-emoji"
+            data-value="1"
+            onclick="showTheMeaning(this, 1)"
+            >😟</span
+          >
+          <span class="meaning-item" id="meaning-1"></span>
+        </div>
+        <div class="emoji-item">
+          <span
+            class="slider-emoji"
+            data-value="2"
+            onclick="showTheMeaning(this, 2)"
+            >😑</span
+          >
+          <span class="meaning-item" id="meaning-2"></span>
+        </div>
+        <div class="emoji-item">
+          <span
+            class="slider-emoji"
+            data-value="3"
+            onclick="showTheMeaning(this, 3)"
+            >🙂</span
+          >
+          <span class="meaning-item" id="meaning-3"></span>
+        </div>
+        <div class="emoji-item">
+          <span
+            class="slider-emoji"
+            data-value="4"
+            onclick="showTheMeaning(this, 4)"
+            >😊</span
+          >
+          <span class="meaning-item" id="meaning-4"></span>
+        </div>
+        <div class="emoji-item">
+          <span
+            class="slider-emoji"
+            data-value="5"
+            onclick="showTheMeaning(this, 5)"
+            >😃</span
+          >
+          <span class="meaning-item" id="meaning-5"></span>
+        </div>   
+        <!-- ------ -->
+        <div id="selected-meaning-display">
+          Selected Rating: <span id="selected-meaning">Not satisfied</span>
+        </div>  
+        <!-- --------    -->
+      </div>
+      <input type="hidden" id="metervalue" name="meter-value" value="">
+     
+      <!-- question 4 -->
+      <div class="slide1">
+        <label>2. Was the trainer’s delivery effective!?</label>
+        <div class="linear-scale-container">
+          <!-- Slider -->
+          <input
+            type="range"
+            id="goal-familiarity"
+            name="familiarity"
+            min="1"
+            max="5"
+            step="1"
+            value="1"
+            oninput="updateFamiliarityValue(this.value)"
+          />
+
+          <!-- Numbered labels below the slider with lines -->
+          <div class="scale-lines">
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+            <span>5</span>
+          </div>
+
+          <!-- Initially hidden output area for value and meaning -->
+          <div id="familiarity-output" style="display: none">
+            Your rating: <span id="familiarity-value">1</span> -
+            <span id="familiarity-meaning">Not Familiar</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- question 5 -->
+      <div class="slide1">
+        <label>3. Will you recommend this training to others?</label>
+        <div class="scale-container">
+          <!-- Slider -->
+          <input
+            type="range"
+            id="scalefamiliarity"
+            name="scale-familiarity"
+            min="1"
+            max="5"
+            step="1"
+            value="1"
+            oninput="updateScaleValue(this.value)"
+          />
+
+          <!-- Numbered labels below the slider with lines -->
+          <div class="scale-lines">
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+            <span>5</span>
+          </div>
+
+          <!-- Initially hidden output area for value and meaning -->
+          <div id="familiar-output" style="display: none">
+            Your rating: <span id="familiar-value">1</span> -
+            <span id="meaning">Not Familiar</span>
+          </div>
+        </div>
+      </div>
+      <div class="slide1">
+        <!-- 6 qes -->
+        <label>4. What could have been improved in the training?</label>
+        <textarea id="improvedtraining" name="improved-training" rows="4"></textarea>
+      </div>
+
+      <div class="slide2">
+        <!-- 7qes -->
+        <label
+          >5. Would you be interested in attending future training sessions on
+          related topics?</label
+        >
+        <label class="custom-checkbox">
+          <input type="radio" name="attend" value="yes" />
+          <span></span>Yes
+        </label>
+        <label class="custom-checkbox">
+          <input type="radio" name="attend" value="no" />
+          <span></span>No
+        </label>
+      </div>
+      <div class="navigation-buttons">
+        <button class="btns" id="prev-main">PREV</button>
+        <button class="btns" id="next-main">NEXT</button>
+      </div>
+    </main>
+    <footer class="footer-content section" id="footer-section" style="display: none;">
+      <h2>Stay Connected</h2>
+      <label>1. Would you like to receive updates and insights about our training programs?</label>
+<div class="radio-group">
+  <label class="custom-radio">
+    <input type="radio" name="updates" value="yes" onclick="toggleContactOptions()" />
+    <span class="checkmark"></span>
+    Yes
+  </label>
+  <label class="custom-radio">
+    <input type="radio" name="updates" value="no" onclick="toggleContactOptions()" />
+    <span class="checkmark"></span>
+    No
+  </label>
+</div>
+
+<div id="email-box" style="display: none">
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" />
+</div>
+
+<div id="phone-box" style="display: none">
+  <label for="phone">Phone:</label>
+  <input type="tel" id="phone" name="phone" />
+</div>
+
+      <div class="navigation-buttons">
+        <button class="btns" id="prev-footer">PREV</button>
+        <button class="btns" id="submit-btn">Submit</button>
+      </div>
+    </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
